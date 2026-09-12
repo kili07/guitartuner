@@ -1,0 +1,17 @@
+{
+  "name": "guitartuner",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Stimmgerät für 6-saitige Gitarre in E-Standard (Web Audio API)",
+  "scripts": {
+    "dev": "vite",
+    "dev:lan": "vite --host",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "typescript": "~5.5.4",
+    "vite": "^5.4.10"
+  }
+}
