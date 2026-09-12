@@ -258,3 +258,14 @@ if (!window.isSecureContext) {
     'info',
   );
 }
+
+// ── Service Worker ──────────────────────────────────────────────────────
+// Nur im Build registrieren – im Dev-Server würde der Cache Änderungen
+// verschlucken. Fehler sind unkritisch: die Seite läuft auch ohne.
+if (import.meta.env.PROD && 'serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js').catch(() => {
+      /* z. B. kein HTTPS – Stimmgerät funktioniert trotzdem */
+    });
+  });
+}
